@@ -1,0 +1,47 @@
+.index-swiper{
+  swiper{
+    width: 750rpx;
+    height:340rpx;
+    image{
+      width:100%;
+    }
+  }
+}
+.index-cate{
+  display: flex;
+  navigator{
+    padding:20rpx;
+    flex:1;
+    image{
+      width:100%
+    }
+  }
+}
+.index_floor{
+  .floor_group{
+    .floor_title{
+      image{
+        width:100%;
+      }
+    }
+    .floor_list{
+      navigator{
+        float:left;
+        width:31.5%;
+        &:nth-last-child(-n+4){
+          height:31.5vw * 386 / 232 /2;
+          padding-left: 10rpx;
+        }
+        &:nth-child(2),
+        &:nth-child(3){
+          border-bottom:1px solid #fff
+        }
+        image{
+          width:100%;
+          height:100%
+        }
+      }
+    }
+  }
+  
+}
