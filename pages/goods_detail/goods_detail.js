@@ -51,6 +51,7 @@ Page({
     if(index===-1){
       //若不存在，则说明当前没有一样的商品，执行将商品推入cart数组中的操作
       this.GoodsInfo.num=1
+      this.GoodsInfo.checked=true
       cart.push(this.GoodsInfo)
     }else{
       //如果有，则将cart中商品数据的数量加一
