@@ -92,10 +92,9 @@ Page({
       }
     },
     itemchange(e){
-      const goods_id = e.currentTarget.dataset.goods_id
+      const goods_id = e.currentTarget.dataset.id
       let {cart}=this.data;
-      let index = cart.findIndex(v=>v.godos_id===goods_id);
-      console.log(index)
+      let index = cart.findIndex(v=>v.goods_id===goods_id);
       cart[index].checked=!cart[index].checked
       this.setCart(cart)
       
