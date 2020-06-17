@@ -27,6 +27,7 @@ Page({
     imageurls:'../../icons/照相机.png'
     //默认的图片不显示时路径
   },
+  //请求的数据头类型
   params:{
     query:'',
     cid:'',
@@ -38,7 +39,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.params.cid=options.cid
+    this.params.cid=options.cid||'',
+    this.params.query = options.query||'',
     this.getGoodsList()
 
   },

@@ -1,1 +1,50 @@
 /* pages/search/search.wxss */
+.page {
+  height: 100vh;
+  padding: 20rpx;
+  width: 100vm;
+  background-color: #dedede;
+}
+.search_row {
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+}
+.search_row input {
+  flex: 1;
+  background-color: #fff;
+  height: 100%;
+  padding-left: 30rpx;
+}
+.search_row .button_row {
+  margin-left: 10rpx;
+}
+.search_row .button_row button {
+  width: 110rpx;
+  height: 100%;
+  font-size: 28rpx;
+  padding: 0;
+  margin-top: 0rpx;
+  margin-bottom: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_content {
+  margin-top: 30rpx;
+}
+.search_content .search_item {
+  background-color: #fff;
+  font-size: 26rpx;
+  padding: 15rpx 10rpx ;
+  align-items: center;
+  border-bottom: 1rpx solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search_content .search_item navigator {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

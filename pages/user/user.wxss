@@ -2,6 +2,10 @@
 page {
   background-color: #edece8;
 }
+.page {
+  padding: 10rpx;
+  height: 100%vh;
+}
 .user_info_wrap {
   height: 45vh;
   overflow: hidden;
@@ -120,4 +124,5 @@ page {
   margin-top: 30rpx;
   background-color: #fff;
   padding: 20rpx;
+  margin-bottom: 100rpx;
 }

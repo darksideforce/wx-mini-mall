@@ -1,66 +1,57 @@
 // pages/search/search.js
+import {request} from '../../request/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goods:[],
+    value:'',
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //timer:0,
   onLoad: function (options) {
-
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  timer:null,
+  handleinput(e){
+    const {value} = e.detail
+    if(!value.trim()){
+      return
+    }
+    clearTimeout(this.timer)
+    this.timeId = setTimeout(()=>{
+      this.querysearch(value);
+    },1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  querysearch(query){
+    request({url:'/goods/qsearch',data:{query}})
+    .then((result)=>{
+      const res = result.data.message;
+      this.setData({
+        goods:res
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  debounce(fn,wait){
+    var timer = null;
+    return function(){
+        var context = this;
+        var args = arguments;
+        if(!timer){
+            timer = setTimeout(function(){
+                fn.apply(context,args);
+                timer = null;
+            },wait)
+        }
+    }
+      //创建一个节流器
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  canceltap(){
+    setTimeout(()=>{
+      this.setData({
+        goods:[],
+        value:'',
+      })
+    },1200)
   }
 })
